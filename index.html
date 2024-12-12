@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+    <style>
+      body {
+        font-family: "Georgia", sans-serif;
+        background-color: #f0f0f0;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      .gallery {
+        margin-top: 20px;
+      }
+
+      img {
+        width: 400px;
+        height: 400px;
+      }
+
+      button {
+        padding: 10px 0;
+        margin: 0 10px;
+        width: 10em;
+        background-color: #303030;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #a430a2;
+      }
+
+      footer {
+        position: absolute;
+        left: 48%;
+        bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Hello, winter!</h1>
+    </header>
+    <main>
+      <div class="gallery">
+        <img src="./images/meme1.jpg" alt="Meme 1" id="galleryImage" />
+        <br />
+        <button id="prevButton">Previous</button>
+        <button id="nextButton">Next</button>
+      </div>
+    </main>
+    <footer>&copy;2024</footer>
+    <script>
+      function consoleMessage() {
+        console.log("Я учу JavaScript!");
+      }
+      consoleMessage();
+
+      const meme1 = "./images/meme1.jpg";
+      const meme2 = "./images/meme2.png";
+      const galleryImage = document.getElementById("galleryImage");
+      const prevButton = document.getElementById("prevButton");
+      const nextButton = document.getElementById("nextButton");
+
+      function changeImage(image) {
+        galleryImage.src = image;
+      }
+
+      nextButton.addEventListener("click", () => {
+        changeImage(meme2);
+      });
+
+      prevButton.addEventListener("click", () => {
+        changeImage(meme1);
+      });
+    </script>
+  </body>
+</html>
